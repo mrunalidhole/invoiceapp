@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class ItemProvider extends ChangeNotifier{
-
-
-  // Controllers for text fields
   final itemNameController = TextEditingController();
   final quantityController = TextEditingController();
   final priceController = TextEditingController();
@@ -12,7 +8,6 @@ class ItemProvider extends ChangeNotifier{
   final phoneNoController = TextEditingController();
   final paymentMethodController = TextEditingController();
   final billedNumberController = TextEditingController();
-
 
   List<Map<String, dynamic>> products = [];
   void addItem() {
@@ -24,7 +19,6 @@ class ItemProvider extends ChangeNotifier{
       itemNameController.clear();
       quantityController.clear();
       priceController.clear();
-
   }
 
   double getTotal() {
@@ -34,11 +28,11 @@ class ItemProvider extends ChangeNotifier{
 
   double calculateDiscount() {
     double total = getTotal();
-    if (total > 1000 && total <= 2500) {
+    if (total > 2000 && total <= 5000) {
       return total * 0.1;
-    } else if (total > 2500 && total <= 5000) {
+    } else if (total > 5000 && total <= 10000) {
       return total * 0.2;
-    }else if (total > 5000){
+    }else if (total > 11000){
       return total * 0.3;
     }
     return 0.0;
@@ -46,11 +40,5 @@ class ItemProvider extends ChangeNotifier{
   
   finalTotal(){
     return getTotal() - calculateDiscount();
-  }
-
-  FetchDetail()async{
-    final response = await Supabase.instance.client.from('registration').update({});
-    return List<Map<String, dynamic>>.from(response);
-
   }
 }

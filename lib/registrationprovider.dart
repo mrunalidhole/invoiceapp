@@ -15,7 +15,6 @@ class RegistrationProvider extends ChangeNotifier{
       'name': name.text,
       'phoneno': phoneno.text,
       'password': password.text,
-      'password2': password2.text
     });
     return true;
   }

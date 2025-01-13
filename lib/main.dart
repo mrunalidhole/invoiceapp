@@ -10,7 +10,6 @@ void main()async{
   await Supabase.initialize(url: 'https://itsrlvjwkfmtlztvleys.supabase.co',
       anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0c3Jsdmp3a2ZtdGx6dHZsZXlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjcyNzQwMzIsImV4cCI6MjA0Mjg1MDAzMn0.eQAVK0btNw9c5MclArS_j_Nd5qp5OZdAw7IQqHpOVS8');
   runApp(MyApp());
-  
 }
 
 class MyApp extends StatelessWidget {

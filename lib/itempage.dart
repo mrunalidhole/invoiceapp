@@ -1,10 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:invoiceapp/display.dart';
 import 'package:invoiceapp/itemprovider.dart';
+import 'package:invoiceapp/loginpage.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -20,7 +20,21 @@ class _ItemPageState extends State<ItemPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(13, 3, 12, 1),
       appBar: AppBar(
-      backgroundColor: Color.fromRGBO(13, 3, 12, 1),),
+      backgroundColor: Color.fromRGBO(13, 3, 12, 1),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10, top: 20),
+          child: Container(
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color.fromRGBO(169, 1, 109, 10)
+            ),
+            child: IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+            },
+              icon: Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 25,),),
+          ),
+        ),
+      ),
       body: Consumer<ItemProvider>(
         builder: (context, item, child)=>SingleChildScrollView(
             padding: EdgeInsets.all(16),
