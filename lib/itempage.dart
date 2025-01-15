@@ -52,6 +52,7 @@ class _ItemPageState extends State<ItemPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: TextField(
+                    style: TextStyle(color: Colors.white),
                     controller: item.itemNameController,
                     decoration: InputDecoration(
                       filled: true,
@@ -67,6 +68,7 @@ class _ItemPageState extends State<ItemPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: TextField(
+                    style: TextStyle(color: Colors.white),
                     controller: item.quantityController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
@@ -83,6 +85,7 @@ class _ItemPageState extends State<ItemPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: TextField(
+                    style: TextStyle(color: Colors.white),
                     controller: item.priceController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
@@ -126,6 +129,7 @@ class _ItemPageState extends State<ItemPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: TextField(
+                    style: TextStyle(color: Colors.white),
                     controller: item.billedToController,
                     decoration: InputDecoration(
                       filled: true,
@@ -141,6 +145,7 @@ class _ItemPageState extends State<ItemPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: TextField(
+                    style: TextStyle(color: Colors.white),
                     controller: item.phoneNoController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
@@ -157,6 +162,7 @@ class _ItemPageState extends State<ItemPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: TextField(
+                    style: TextStyle(color: Colors.white),
                     controller: item.paymentMethodController,
                     decoration: InputDecoration(
                       filled: true,

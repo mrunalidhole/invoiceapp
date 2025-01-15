@@ -51,6 +51,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 30, right: 30),
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       controller: register.businessname,
                       decoration: InputDecoration(
                         filled: true,
@@ -65,6 +66,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 30, right: 30),
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       controller: register.name,
                       decoration: InputDecoration(
                         filled: true,
@@ -79,6 +81,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 30, right: 30),
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       controller: register.phoneno,
                       decoration: InputDecoration(
                         filled: true,
@@ -93,6 +96,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 30, right: 30),
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       controller: register.password,
                       decoration: InputDecoration(
                         filled: true,
@@ -107,6 +111,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 30, right: 30),
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       controller: register.password2,
                       decoration: InputDecoration(
                         filled: true,
