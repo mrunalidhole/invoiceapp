@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:invoiceapp/itempage.dart';
 import 'package:invoiceapp/itemprovider.dart';
+import 'package:open_file/open_file.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,6 +31,7 @@ class _DisplayPageState extends State<DisplayPage> {
 
   Future<void> generatePdf()async{
     final pdf = pw.Document();
+    final item = Provider.of<ItemProvider>(context,listen: false);
     pdf.addPage(
       pw.Page(
         build: (pw.Context context){
@@ -284,9 +289,15 @@ class _DisplayPageState extends State<DisplayPage> {
             ),
           );
         }
-      )
+      ),
     );
+    final bytes = await pdf.save();
+    final temp = await getTemporaryDirectory();
+    final file = File('${temp.path}');
+        await file.writeAsBytes(bytes);
+    OpenFile.open(file.path);
   }
+
 
 
   FetchDetail()async{
@@ -607,7 +618,9 @@ class _DisplayPageState extends State<DisplayPage> {
                                   Color.fromRGBO(116, 1, 130, 10)
                                 ])
                             ),
-                            child: ElevatedButton(onPressed: () {},
+                            child: ElevatedButton(onPressed: () {
+                              generatePdf();
+                            },
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.transparent,
                                     shape: RoundedRectangleBorder(

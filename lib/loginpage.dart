@@ -23,7 +23,9 @@ class _LoginPageState extends State<LoginPage> {
     setState(() async{
       final phoneno = await state.getString('phoneno');
       if(phoneno != ''){
-        isLogin = true;
+        setState(() {
+          isLogin = true;
+        });
       }
     });
   }
@@ -97,8 +99,17 @@ class _LoginPageState extends State<LoginPage> {
                                         Radius.circular(15))),
                                 prefixIcon: Icon(Icons.lock, color: Colors.white,),
                                 suffixIcon: IconButton(
-                                  icon: Icon(isPasswordVisible ? Icons.visibility : Icons.visibility_off),
-                                  onPressed: () {}),
+                                  icon: Icon(isPasswordVisible ? Icons.visibility : Icons.visibility_off, color: Colors.white,),
+                                  onPressed: () {
+                                    if(isPasswordVisible == true){
+                                      setState(() {
+                                        isPasswordVisible = false;
+                                      });
+                                    }else{
+                                    setState(() {
+                                      isPasswordVisible = true;
+                                    });
+                                  }}),
                                 labelText: 'Password', labelStyle: TextStyle(color: Colors.white)
                             ),
                           ),
