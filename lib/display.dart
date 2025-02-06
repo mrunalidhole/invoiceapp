@@ -618,8 +618,8 @@ class _DisplayPageState extends State<DisplayPage> {
                                   Color.fromRGBO(116, 1, 130, 10)
                                 ])
                             ),
-                            child: ElevatedButton(onPressed: () {
-                              generatePdf();
+                            child: ElevatedButton(onPressed: () async{
+                              await generatePdf();
                             },
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.transparent,
